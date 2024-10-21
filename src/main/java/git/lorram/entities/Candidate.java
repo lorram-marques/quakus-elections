@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-//import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,7 +26,7 @@ public class Candidate implements Serializable {
 	private String name;
 	private Integer number;
 	
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(mappedBy = "candidate", fetch = FetchType.EAGER)
 	private List<Vote> votes = new ArrayList<>();
 	
