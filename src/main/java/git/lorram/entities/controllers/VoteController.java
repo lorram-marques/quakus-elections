@@ -3,6 +3,7 @@ package git.lorram.entities.controllers;
 import java.util.List;
 
 import git.lorram.entities.Vote;
+import git.lorram.entities.components.VoteComponent;
 import git.lorram.services.VoteService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -40,7 +41,7 @@ public class VoteController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response insert(Vote obj) {
+    public Response insert(VoteComponent obj) {
         service.insert(obj);
         return Response.status(Response.Status.CREATED).entity(obj).build();
     }
